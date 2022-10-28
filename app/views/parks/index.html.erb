@@ -1,0 +1,29 @@
+<h1> State Parks </h1>
+
+<div id="park-info">
+  <h3>Total Number of Parks in State: <%= @park_count %></h3>
+  <br>
+
+  <% @parks.each_with_index do |park, index| %>
+    <div id="park-<%= index %>" >
+      <h2><%= park.name %></h2>
+        <h3>Description:</h3>
+          <p><%= park.description %></p>
+        <h3>Standard Park Hours:</h3>
+          <ul>
+            <li>Sunday: <%= park.hours[:sunday] %></li>
+            <li>Monday: <%= park.hours[:monday] %></li>
+            <li>Tuesday: <%= park.hours[:tuesday] %></li>
+            <li>Wednesday: <%= park.hours[:wednesday] %></li>
+            <li>Thursday: <%= park.hours[:thursday] %></li>
+            <li>Friday: <%= park.hours[:friday] %></li>
+            <li>Saturday: <%= park.hours[:saturday] %></li>
+          </ul>
+        <h3>Directions to Park:</h3>
+          <p><%= park.directions %></p>
+          <br>
+    </div> 
+  <% end %>
+  
+ 
+</div>
